@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DiskScheduling</class>
+ <widget class="QMainWindow" name="DiskScheduling">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>933</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>磁盘调度</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="inputGroupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox::title {
+	color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <property name="title">
+           <string>输入磁道（1 - 999） :</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="2" column="2">
+            <widget class="QRadioButton" name="scanRadioButton">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>&amp;SCAN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QComboBox" name="comboBox">
+             <property name="mouseTracking">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(128, 195, 69, 128);
+color: rgb(255, 255, 255);
+/*border:	1px solid rgba(184, 218, 155, 0);
+border-radius: 8px;*/</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>None</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>up</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>down</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QRadioButton" name="fcfsRadioButton">
+             <property name="styleSheet">
+              <string notr="true">QRadioButton {
+	color: rgb(255, 255, 255);
+}
+QRadioButton::indicator {
+	/*background-color: rgba(128, 195, 69, 170);*/	
+	color: rgba(128, 195, 69, 200);
+}
+/*QRadioButton::indicator:unchecked {
+	background-color: rgb(255, 255, 255);
+}*/</string>
+             </property>
+             <property name="text">
+              <string>&amp;FCFS</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="startLabel">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>开始磁道 :</string>
+             </property>
+             <property name="buddy">
+              <cstring>startLineEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="diskSeqLabel">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>访问磁道 :</string>
+             </property>
+             <property name="buddy">
+              <cstring>diskSeqLineEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" colspan="2">
+            <widget class="QLineEdit" name="startLineEdit">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit  {
+	background-color: rgb(119, 119, 119);
+	color: rgb(255, 255, 255);	
+	selection-color: rgb(119, 119, 119);	
+	selection-background-color: rgb(255, 255, 255);
+	border-style: solid;
+	border: 1px solid white;
+	border-radius: 6px;
+}
+	</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QRadioButton" name="cscanRadioButton">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>&amp;CSCAN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QRadioButton" name="sstfRadioButton">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>&amp;SSTF</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="3">
+            <widget class="QLineEdit" name="diskSeqLineEdit">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit  {
+	background-color: rgb(119, 119, 119);
+	color: rgb(255, 255, 255);	
+	selection-color: rgb(119, 119, 119);	
+	selection-background-color: rgb(255, 255, 255);
+	border-style: solid;
+	border: 1px solid white;
+	border-radius: 6px;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="okButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton { 
+	background-color: rgb(128, 195, 69); 
+	border-radius: 10px; 
+	color: rgb(255, 255, 255); 	
+}
+QPushButton:hover { background-color:rgba(128, 195, 69, 128); }
+QPushButton:disabled
+{
+	background-color: rgba(128, 195, 69, 128);
+}</string>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+            <property name="default">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>188</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QGroupBox" name="outputGroupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox::title {
+	color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <property name="title">
+           <string>输出访问顺序 :</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="readSeqLabel">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>访问序列 :</string>
+             </property>
+             <property name="buddy">
+              <cstring>readSeqLineEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="AverDisLabel">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>平均寻到长度 :</string>
+             </property>
+             <property name="buddy">
+              <cstring>AverDisLineEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="tolDisLabel">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>总寻道长度 :</string>
+             </property>
+             <property name="buddy">
+              <cstring>tolDisLineEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="tolDisLineEdit">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit  {
+	background-color: rgb(119, 119, 119);
+	color: rgb(255, 255, 255);	
+	selection-color: rgb(119, 119, 119);	
+	selection-background-color: rgb(255, 255, 255);
+	border-style: solid;
+	border: 1px solid white;
+	border-radius: 6px;
+}</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="readSeqLineEdit">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit  {
+	background-color: rgb(119, 119, 119);
+	color: rgb(255, 255, 255);	
+	selection-color: rgb(119, 119, 119);	
+	selection-background-color: rgb(255, 255, 255);
+	border-style: solid;
+	border: 1px solid white;
+	border-radius: 6px;
+}</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="AverDisLineEdit">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit  {
+	background-color: rgb(119, 119, 119);
+	color: rgb(255, 255, 255);	
+	selection-color: rgb(119, 119, 119);	
+	selection-background-color: rgb(255, 255, 255);
+	border-style: solid;
+	border: 1px solid white;
+	border-radius: 6px;
+}</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="close_btn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton { background-color: rgb(128, 195, 69); border-radius: 10px; color: rgb(255, 255, 255); }
+QPushButton:hover { background-color:rgba(128, 195, 69, 128); }
+QPushButton:disabled
+{
+	background-color: rgba(128, 195, 69, 128);
+}</string>
+            </property>
+            <property name="text">
+             <string>退出</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>138</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCustomPlot" name="widget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+   <zorder>widget</zorder>
+   <zorder>widget</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>933</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>startLineEdit</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>diskSeqLineEdit</tabstop>
+  <tabstop>fcfsRadioButton</tabstop>
+  <tabstop>sstfRadioButton</tabstop>
+  <tabstop>scanRadioButton</tabstop>
+  <tabstop>cscanRadioButton</tabstop>
+  <tabstop>okButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
